@@ -21,7 +21,7 @@ namespace Microsoft.Gestures.Samples.VideoPlayerGestureControl
 
         private async void WindowLoaded(object sender, RoutedEventArgs e)
         {
-            // Step 1: Connect to Microsoft Gestures Detection service
+            // Step 1: Connect to Microsoft Gestures service
             _gesturesService = GesturesServiceEndpointFactory.Create();
             _gesturesService.StatusChanged += (s, args) => Dispatcher.Invoke(() => GeturesServiceStatus.Text = $"[{args.Status}]");
             Closed += (s, args) => _gesturesService?.Dispose();
@@ -36,7 +36,7 @@ namespace Microsoft.Gestures.Samples.VideoPlayerGestureControl
             //                                       │                                               ^
             //                                       └───────────────────────────────────────────────┘
             //
-            // When ever the gesture returns to Idle state it will always resume playback
+            // Whenever the gesture returns to the Idle state, playback will resume
             //
             var spreadPose = GeneratePinchPose("Spread", true);
             var pausePose = GeneratePinchPose("Pause");
@@ -57,7 +57,7 @@ namespace Microsoft.Gestures.Samples.VideoPlayerGestureControl
             _rewindGesture.Triggered += (s, args) => Dispatcher.Invoke(() => VideoStatus.Text = "▶");
             _rewindGesture.IdleTriggered += (s, args) => Dispatcher.Invoke(() => VideoStatus.Text = "▶");
 
-            // Step 3: Register the gesture (When window focus is lost/gained the service will effectively change the gesture registration automatically)
+            // Step 3: Register the gesture (When window focus is lost (gained) the service will automatically unregister (register) the gesture)
             //         To manually control the gesture registration, pass 'isGlobal: true' parameter in the function call below
             await _gesturesService.RegisterGesture(_rewindGesture);
         }
