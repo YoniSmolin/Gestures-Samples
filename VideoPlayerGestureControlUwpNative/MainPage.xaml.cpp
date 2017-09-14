@@ -67,18 +67,18 @@ void MainPage::OnPageLoaded(Platform::Object^ sender, Windows::UI::Xaml::RoutedE
 	//
 	auto spreadPose = GeneratePinchPose(L"Spread", true);
 	auto pausePose = GeneratePinchPose(L"Pause");
-	_pausePoseTriggeredEventScoper = pausePose->SubscribeToGestureSegmentTriggeredEvent([dispatcher, this](EventProvider*, const GestureSegmentTriggeredEventArgs& args)
+	_pausePoseTriggeredEventScoper = pausePose->SubscribeToGestureSegmentTriggeredEvent([dispatcher, this](EventProvider*, const GestureSegmentTriggeredEventArgs&)
 	{
-		dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler([args, this]() 
+		dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler([this]() 
 		{
 			VideoStatus->Text = ref new String(L"⏸"); 
 		}));
 	});
 	
-	auto rewindMotion = HandMotion::Make(L"Back", PalmMotion::Make(VerticalMotionSegment::GetLeft()));
-	_rewindMotionTriggeredEventScoper = rewindMotion->SubscribeToGestureSegmentTriggeredEvent([dispatcher, this](EventProvider*, const GestureSegmentTriggeredEventArgs& args)
+	auto rewindMotion = HandMotion::Make(L"Rewind", PalmMotion::Make(VerticalMotionSegment::GetLeft()));
+	_rewindMotionTriggeredEventScoper = rewindMotion->SubscribeToGestureSegmentTriggeredEvent([dispatcher, this](EventProvider*, const GestureSegmentTriggeredEventArgs&)
 	{
-		dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler([args, this]()
+		dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler([this]()
 		{
 			VideoStatus->Text = ref new String(L"⏪");
 		}));
@@ -89,20 +89,20 @@ void MainPage::OnPageLoaded(Platform::Object^ sender, Windows::UI::Xaml::RoutedE
 
 	// Then define the gesture by concatenating the previous objects to form a simple state machine
 	_rewindGesture = Gesture::Make(L"RewindGesture", spreadPose, pausePose, rewindMotion, keepRewindingPose, releasePose);
-	// Detect if the user releases his pinch-grab and return to playback
+	// Detect if the user releases the pinch-grab hold in order to resume the playback
 	_rewindGesture->AddSubPath(pausePose, releasePose);
 
 	// Continue playing the video when the gesture resets (either successful or aborted)
-	_rewindGestureTriggeredEventScoper = _rewindGesture->SubscribeToGestureSegmentTriggeredEvent([dispatcher, this](EventProvider*, const GestureSegmentTriggeredEventArgs& args)
+	_rewindGestureTriggeredEventScoper = _rewindGesture->SubscribeToGestureSegmentTriggeredEvent([dispatcher, this](EventProvider*, const GestureSegmentTriggeredEventArgs&)
 	{
-		dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler([args, this]()
+		dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler([this]()
 		{
 			VideoStatus->Text = ref new String(L"▶");
 		}));
 	});	
-	_rewindGestureIdleTriggeredEventScoper = _rewindGesture->SubscribeToIdleTriggeredEvent([dispatcher, this](EventProvider*, const GestureSegmentTriggeredEventArgs& args)
+	_rewindGestureIdleTriggeredEventScoper = _rewindGesture->SubscribeToIdleTriggeredEvent([dispatcher, this](EventProvider*, const GestureSegmentTriggeredEventArgs&)
 	{
-		dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler([args, this]()
+		dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler([this]()
 		{
 			VideoStatus->Text = ref new String(L"▶");
 		}));

@@ -42,7 +42,7 @@ namespace Microsoft.Gestures.Samples.VideoPlayerGestureControl
             var pausePose = GeneratePinchPose("Pause");
             pausePose.Triggered += (s, args) => Dispatcher.Invoke(() => VideoStatus.Text = "⏸");
 
-            var rewindMotion = new HandMotion("Back", new PalmMotion(VerticalMotionSegment.Left));
+            var rewindMotion = new HandMotion("Rewind", new PalmMotion(VerticalMotionSegment.Left));
             rewindMotion.Triggered += (s, args) => Dispatcher.Invoke(() => VideoStatus.Text = "⏪");
 
             var keepRewindingPose = GeneratePinchPose("KeepRewind");
@@ -50,7 +50,7 @@ namespace Microsoft.Gestures.Samples.VideoPlayerGestureControl
             
             // Then define the gesture by concatenating the previous objects to form a simple state machine
             _rewindGesture = new Gesture("RewindGesture", spreadPose, pausePose, rewindMotion, keepRewindingPose, releasePose);
-            // Detect if the user releases his pinch-grab and return to playback
+            // Detect if the user releases the pinch-grab hold in order to resume the playback
             _rewindGesture.AddSubPath(pausePose, releasePose);
             
             // Continue playing the video when the gesture resets (either successful or aborted)

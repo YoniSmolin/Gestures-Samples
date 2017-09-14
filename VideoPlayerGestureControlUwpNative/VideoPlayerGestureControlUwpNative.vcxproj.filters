@@ -56,7 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="VideoPlayerGestureControlUwpNative_TemporaryKey.pfx" />
-    <None Include="RotateSampleUwpNative_TemporaryKey.pfx" />
     <None Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\x64\windows\Microsoft.Gestures.Common.Native.dll">
       <Filter>Dependencies</Filter>
     </None>

@@ -210,7 +210,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="RotateSampleUwpNative_TemporaryKey.pfx" />
     <None Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\x64\windows\Microsoft.Gestures.Protocol.Native.dll">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
     </None>
