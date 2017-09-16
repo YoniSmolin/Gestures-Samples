@@ -56,16 +56,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="RotateSampleUwpNative_TemporaryKey.pfx" />
-    <None Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\x64\windows\Microsoft.Gestures.Common.Native.dll">
+    <None Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\$(Platform)\windows\$(Configuration)\Microsoft.Gestures.Common.Native.dll">
       <Filter>Dependencies</Filter>
     </None>
-    <None Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\x64\windows\Microsoft.Gestures.Native.dll">
+    <None Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\$(Platform)\windows\$(Configuration)\Microsoft.Gestures.Native.dll">
       <Filter>Dependencies</Filter>
     </None>
-    <None Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\x64\windows\Microsoft.Gestures.Protocol.Native.dll">
+    <None Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\$(Platform)\windows\$(Configuration)\Microsoft.Gestures.Protocol.Native.dll">
       <Filter>Dependencies</Filter>
     </None>
-    <None Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\x64\windows\Microsoft.Gestures.Proxy.Native.dll">
+    <None Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\$(Platform)\windows\$(Configuration)\Microsoft.Gestures.Proxy.Native.dll">
       <Filter>Dependencies</Filter>
     </None>
   </ItemGroup>

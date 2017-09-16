@@ -109,7 +109,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/x64/windows</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/$(Platform)/windows/$(Configuration)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Microsoft.Gestures.Common.Native.lib;Microsoft.Gestures.Native.lib;Microsoft.Gestures.Protocol.Native.lib;Microsoft.Gestures.Proxy.Native.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -125,7 +125,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/x64/windows</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/$(Platform)/windows/$(Configuration)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Microsoft.Gestures.Common.Native.lib;Microsoft.Gestures.Native.lib;Microsoft.Gestures.Protocol.Native.lib;Microsoft.Gestures.Proxy.Native.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -141,7 +141,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/x64/windows</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/$(Platform)/windows/$(Configuration)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Microsoft.Gestures.Common.Native.lib;Microsoft.Gestures.Native.lib;Microsoft.Gestures.Protocol.Native.lib;Microsoft.Gestures.Proxy.Native.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -161,7 +161,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/x64/windows</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/$(Platform)/windows/$(Configuration)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Microsoft.Gestures.Common.Native.lib;Microsoft.Gestures.Native.lib;Microsoft.Gestures.Protocol.Native.lib;Microsoft.Gestures.Proxy.Native.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -169,16 +169,16 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
   <ItemGroup>
-    <Content Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\x64\windows\Microsoft.Gestures.Common.Native.dll">
+    <Content Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\$(Platform)\windows\$(Configuration)\Microsoft.Gestures.Common.Native.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\x64\windows\Microsoft.Gestures.Native.dll">
+    <Content Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\$(Platform)\windows\$(Configuration)\Microsoft.Gestures.Native.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\x64\windows\Microsoft.Gestures.Protocol.Native.dll">
+    <Content Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\$(Platform)\windows\$(Configuration)\Microsoft.Gestures.Protocol.Native.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\x64\windows\Microsoft.Gestures.Proxy.Native.dll">
+    <Content Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\$(Platform)\windows\$(Configuration)\Microsoft.Gestures.Proxy.Native.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

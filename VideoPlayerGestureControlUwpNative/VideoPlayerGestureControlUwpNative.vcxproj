@@ -131,7 +131,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>Microsoft.Gestures.Common.Native.lib;Microsoft.Gestures.Native.lib;Microsoft.Gestures.Protocol.Native.lib;Microsoft.Gestures.Proxy.Native.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/x64/windows</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/$(Platform)/windows/$(Configuration)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
@@ -142,7 +142,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>Microsoft.Gestures.Common.Native.lib;Microsoft.Gestures.Native.lib;Microsoft.Gestures.Protocol.Native.lib;Microsoft.Gestures.Proxy.Native.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/x64/windows</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/$(Platform)/windows/$(Configuration)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -153,7 +153,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>Microsoft.Gestures.Common.Native.lib;Microsoft.Gestures.Native.lib;Microsoft.Gestures.Protocol.Native.lib;Microsoft.Gestures.Proxy.Native.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/x64/windows</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/$(Platform)/windows/$(Configuration)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -164,7 +164,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>Microsoft.Gestures.Common.Native.lib;Microsoft.Gestures.Native.lib;Microsoft.Gestures.Protocol.Native.lib;Microsoft.Gestures.Proxy.Native.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/x64/windows</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/$(Platform)/windows/$(Configuration)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -175,7 +175,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>Microsoft.Gestures.Common.Native.lib;Microsoft.Gestures.Native.lib;Microsoft.Gestures.Protocol.Native.lib;Microsoft.Gestures.Proxy.Native.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/x64/windows</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/$(Platform)/windows/$(Configuration)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -186,7 +186,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>Microsoft.Gestures.Common.Native.lib;Microsoft.Gestures.Native.lib;Microsoft.Gestures.Protocol.Native.lib;Microsoft.Gestures.Proxy.Native.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/x64/windows</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(MicrosoftGesturesInstallDir)/SDK/native/lib/$(Platform)/windows/$(Configuration)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -210,17 +210,17 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\x64\windows\Microsoft.Gestures.Protocol.Native.dll">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+    <None Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\$(Platform)\windows\$(Configuration)\Microsoft.Gestures.Protocol.Native.dll">
+      <DeploymentContent>true</DeploymentContent>
     </None>
-    <None Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\x64\windows\Microsoft.Gestures.Proxy.Native.dll">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+    <None Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\$(Platform)\windows\$(Configuration)\Microsoft.Gestures.Proxy.Native.dll">
+      <DeploymentContent>true</DeploymentContent>
     </None>
-    <None Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\x64\windows\Microsoft.Gestures.Common.Native.dll">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+    <None Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\$(Platform)\windows\$(Configuration)\Microsoft.Gestures.Common.Native.dll">
+      <DeploymentContent>true</DeploymentContent>
     </None>
-    <None Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\x64\windows\Microsoft.Gestures.Native.dll">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+    <None Include="$(MicrosoftGesturesInstallDir)\SDK\native\lib\$(Platform)\windows\$(Configuration)\Microsoft.Gestures.Native.dll">
+      <DeploymentContent>true</DeploymentContent>
     </None>
     <None Include="VideoPlayerGestureControlUwpNative_TemporaryKey.pfx" />
   </ItemGroup>
